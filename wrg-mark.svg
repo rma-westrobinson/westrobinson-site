@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- corner registration ticks -->
+  <g stroke="#14213D" stroke-width="3" stroke-linecap="square" fill="none">
+    <!-- top-left -->
+    <path d="M14,36 V14 H36" />
+    <!-- top-right -->
+    <path d="M164,14 H186 V36" />
+    <!-- bottom-left -->
+    <path d="M14,164 V186 H36" />
+    <!-- bottom-right -->
+    <path d="M186,164 V186 H164" />
+  </g>
+
+  <!-- WRG wordmark -->
+  <text x="100" y="118"
+        text-anchor="middle"
+        font-family="'IBM Plex Mono', 'Menlo', 'Consolas', monospace"
+        font-weight="500"
+        font-size="52"
+        letter-spacing="6"
+        fill="#14213D">WRG</text>
+
+  <!-- underline rule -->
+  <line x1="58" y1="136" x2="142" y2="136" stroke="#2F5D5A" stroke-width="3" />
+</svg>

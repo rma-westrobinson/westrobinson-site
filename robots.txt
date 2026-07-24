@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /privacy.html
+Allow: /
+
+Sitemap: https://westrobinson.com/sitemap.xml
