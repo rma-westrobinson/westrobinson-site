@@ -20,7 +20,7 @@
 <!-- End Cloudflare Web Analytics -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="icon" type="image/svg+xml" href="wrg-media-kit/wrg-icon-square-reversed.svg">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' fill='%2314213D'/%3E%3Ctext x='100' y='128' font-family='Georgia,serif' font-weight='700' font-size='74' letter-spacing='-3' fill='%23EDEFEA' text-anchor='middle'%3EWRG%3C/text%3E%3Crect x='30' y='140' width='140' height='6' fill='%23EDEFEA'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
@@ -61,22 +61,15 @@
     max-width:1080px; margin:0 auto;
   }
   .brand{
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--ink);
     display:flex;
     align-items:center;
-    gap:10px;
-    text-decoration: none;
+    text-decoration:none;
   }
   .brand-mark{
-    width:28px;
-    height:28px;
-    flex-shrink:0;
+    height:32px;
+    width:auto;
     display:block;
+    flex-shrink:0;
   }
   nav ul{list-style:none; display:flex; gap:28px;}
   nav a{
@@ -116,16 +109,6 @@
     border:1px solid var(--line);
     z-index:-1;
   }
-  .mono-head{
-    display:flex; justify-content:space-between; align-items:baseline;
-    padding:20px 28px;
-    border-bottom:1px solid var(--ink);
-    font-family:var(--mono);
-    font-size:11px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-  }
-  .mono-head .id{color:var(--teal);}
   .mono-body{padding:44px 28px 36px;}
   .eyebrow{
     font-family:var(--mono);
@@ -542,8 +525,9 @@
 <header>
   <nav>
     <div class="brand">
-      <img src="wrg-media-kit/wrg-icon-square.svg" class="brand-mark" alt="WRG" width="28" height="28">
-      West Robinson Group
+      <svg class="brand-mark" viewBox="0 0 200 72" xmlns="http://www.w3.org/2000/svg" aria-label="West Robinson Group">
+        <text x="0" y="66" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="72" letter-spacing="-3" fill="#14213D" text-decoration="underline" text-decoration-color="#14213D">WRG</text>
+      </svg>
     </div>
     <ul>
       <li><a href="#practice">Practice</a></li>
@@ -559,10 +543,6 @@
   <section class="hero">
     <div class="wrap">
       <div class="monograph load-in">
-        <div class="mono-head">
-          <span>Registry Entry</span>
-          <span class="id">WRG&nbsp;/&nbsp;001</span>
-        </div>
         <div class="mono-body">
           <div class="eyebrow load-in d1">Medication Management Consulting</div>
           <h1 class="load-in d2">Hospital medication management, examined from inside the institution.</h1>
@@ -806,7 +786,9 @@
 <footer>
   <div class="wrap">
     <span style="display:flex; align-items:center; gap:8px;">
-      <img src="wrg-media-kit/wrg-icon-square.svg" alt="WRG" width="16" height="16" style="display:block;">
+      <svg height="14" viewBox="0 0 200 72" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="0" y="66" font-family="Georgia,'Times New Roman',serif" font-weight="700" font-size="72" letter-spacing="-3" fill="#14213D" text-decoration="underline">WRG</text>
+      </svg>
       © 2026 West Robinson Group
     </span>
     <span style="display:flex; gap:24px; align-items:center;">
