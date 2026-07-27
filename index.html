@@ -73,14 +73,14 @@
   }
   nav ul{list-style:none; display:flex; gap:32px; align-items:center;}
   nav a{
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size:13px;
-    font-weight:700;
-    letter-spacing:0.08em;
+    font-family: var(--sans);
+    font-size:12px;
+    font-weight:500;
+    letter-spacing:0.1em;
     text-transform:uppercase;
     text-decoration:none;
     color:var(--ink);
-    opacity:0.55;
+    opacity:0.5;
     transition:opacity 0.2s;
   }
   nav a:hover{opacity:1;}
@@ -88,10 +88,10 @@
     border:1px solid var(--ink);
     padding:7px 16px;
     opacity:1 !important;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:0.08em;
+    font-family: var(--sans);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:0.1em;
     text-transform:uppercase;
     transition:background 0.2s, color 0.2s;
   }
@@ -285,7 +285,7 @@
   }
   .outcomes-inner{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:repeat(4,1fr);
     max-width:1080px;
     margin:0 auto;
     padding:0 32px;
@@ -391,8 +391,8 @@
     border-top:1px solid var(--ink);
     padding-top:40px;
     margin-bottom:48px;
+    align-items:start;
   }
-  .contact-meta{}
   .contact h2{
     font-family:var(--serif);
     font-weight:500;
@@ -445,6 +445,7 @@
 
   @media (max-width:900px){
     .principle-grid{grid-template-columns:repeat(2,1fr);}
+    .outcomes-inner{grid-template-columns:repeat(2,1fr);}
   }
 
   @media (max-width:760px){
@@ -506,13 +507,16 @@
     transform:translateY(14px);
   }
   .reveal-stagger.is-visible .entry:nth-child(1){animation-delay:0.02s;}
-  .reveal-stagger.is-visible .entry:nth-child(2){animation-delay:0.08s;}
-  .reveal-stagger.is-visible .entry:nth-child(3){animation-delay:0.14s;}
-  .reveal-stagger.is-visible .entry:nth-child(4){animation-delay:0.2s;}
-  .reveal-stagger.is-visible .entry:nth-child(5){animation-delay:0.26s;}
-  .reveal-stagger.is-visible .entry:nth-child(6){animation-delay:0.32s;}
-  .reveal-stagger.is-visible .entry:nth-child(7){animation-delay:0.38s;}
-  .reveal-stagger.is-visible .entry:nth-child(8){animation-delay:0.44s;}
+  .reveal-stagger.is-visible .entry:nth-child(2){animation-delay:0.07s;}
+  .reveal-stagger.is-visible .entry:nth-child(3){animation-delay:0.12s;}
+  .reveal-stagger.is-visible .entry:nth-child(4){animation-delay:0.17s;}
+  .reveal-stagger.is-visible .entry:nth-child(5){animation-delay:0.22s;}
+  .reveal-stagger.is-visible .entry:nth-child(6){animation-delay:0.27s;}
+  .reveal-stagger.is-visible .entry:nth-child(7){animation-delay:0.32s;}
+  .reveal-stagger.is-visible .entry:nth-child(8){animation-delay:0.37s;}
+  .reveal-stagger.is-visible .entry:nth-child(9){animation-delay:0.42s;}
+  .reveal-stagger.is-visible .entry:nth-child(10){animation-delay:0.47s;}
+  .reveal-stagger.is-visible .entry:nth-child(11){animation-delay:0.52s;}
   .reveal-stagger.is-visible .principle:nth-child(1){animation-delay:0.02s;}
   .reveal-stagger.is-visible .principle:nth-child(2){animation-delay:0.1s;}
   .reveal-stagger.is-visible .principle:nth-child(3){animation-delay:0.18s;}
@@ -579,7 +583,7 @@
   </section>
 
   <div class="outcomes reveal">
-    <div class="outcomes-inner" style="grid-template-columns:repeat(4,1fr);">
+    <div class="outcomes-inner">
       <div class="outcome">
         <div class="figure">100% inspection pass rate</div>
         <div class="label">Every OCP and Accreditation Canada inspection led across two hospital sites passed with no action plan required.</div>
@@ -603,7 +607,7 @@
   <section id="practice">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="tag">Formulary</span>
+        <span class="tag">Practice</span>
         <h2>Practice areas</h2>
       </div>
       <p class="section-note reveal">Engagements cover any point in the medication management continuum where safety, compliance, or operational performance is at risk, whether that's a survey date, an inspection finding, a cabinet configuration, a bedside scanning workflow, or an EHR pharmacy build. Roger scopes and leads every engagement personally, and brings in vetted specialist consultants when a platform or system calls for expertise beyond his own.</p>
@@ -619,10 +623,34 @@
 
         <div class="entry">
           <div>
-            <div class="name">Controlled substance policy</div>
+            <div class="name">Medication management policy</div>
             <span class="class">Regulatory &amp; operational</span>
           </div>
-          <div class="desc">Policy design and documentation for controlled substance handling, storage, and reconciliation, built to withstand both internal audit and external review.</div>
+          <div class="desc">Full medication management policy suite development and maintenance, covering controlled substance handling, high-alert medications, medication error reporting, storage standards, prescriber order documentation, and reconciliation processes. Built to satisfy both Accreditation Canada standards and OCP inspection requirements.</div>
+        </div>
+
+        <div class="entry">
+          <div>
+            <div class="name">Drug shortage &amp; procurement support</div>
+            <span class="class">Supply chain</span>
+          </div>
+          <div class="desc">Sourcing and procurement support for backordered, discontinued, and hard-to-find medications, drawing on established supplier relationships and cross-institutional networks. Particularly valuable for surgical and specialty settings where formulary gaps carry direct patient safety implications.</div>
+        </div>
+
+        <div class="entry">
+          <div>
+            <div class="name">Infusion pump drug library management</div>
+            <span class="class">Clinical technology</span>
+          </div>
+          <div class="desc">Drug library build, review, and maintenance across multiple infusion pump platforms including Plum 360, Baxter Sigma Spectrum, and Medfusion 4000. Covers concentration standardization, dosing limit validation, and soft and hard stop configuration aligned to ISMP Canada guidelines.</div>
+        </div>
+
+        <div class="entry">
+          <div>
+            <div class="name">P&amp;T committee support</div>
+            <span class="class">Formulary governance</span>
+          </div>
+          <div class="desc">Ongoing pharmacy and therapeutics committee advisory support, including therapeutic interchange proposals, formulary addition and deletion reviews, renal dose adjustment authority frameworks, and nurse-initiated protocol development. Structured for both recurring retainer and project-based engagements.</div>
         </div>
 
         <div class="entry">
