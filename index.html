@@ -105,23 +105,13 @@
   }
   .monograph{
     border:1px solid var(--ink);
-    border-left:5px solid transparent;
-    background:var(--paper-warm);
+    border-left:5px solid var(--teal);
+    background:#FFFFFF;
     position:relative;
-    animation:borderDraw 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+    box-shadow:4px 4px 0 var(--line);
   }
-  @keyframes borderDraw{
-    from{border-left-color:transparent;}
-    to{border-left-color:var(--teal);}
-  }
-  .monograph::before{
-    content:"";
-    position:absolute;
-    top:8px; left:8px; right:-8px; bottom:-8px;
-    border:1px solid var(--line);
-    z-index:-1;
-  }
-  .mono-body{padding:44px 28px 36px;}
+  .monograph::before{content:none;}
+  .mono-body{padding:44px 36px 40px;}
   .eyebrow{
     font-family:var(--mono);
     font-size:12px;
@@ -137,12 +127,15 @@
     line-height:1.06;
     letter-spacing:-0.01em;
     max-width:15ch;
+    color:var(--ink);
   }
   .hero-lede{
     font-size:18px;
     max-width:52ch;
     margin-top:24px;
-    color:#3D4F6B;
+    color:#14213D;
+    line-height:1.65;
+    opacity:0.78;
   }
   .fields{
     margin-top:40px;
@@ -856,10 +849,6 @@
   if(prefersReduced){
     document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
       el.classList.add('is-visible');
-    });
-    document.querySelectorAll('.monograph').forEach(function(el){
-      el.style.borderLeftColor = 'var(--teal)';
-      el.style.animation = 'none';
     });
   } else if('IntersectionObserver' in window){
 
