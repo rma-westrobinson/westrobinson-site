@@ -25,13 +25,13 @@
 <style>
   :root{
     --ink:#14213D;
-    --paper:#EDEFEA;
-    --paper-warm:#E5E8E0;
+    --paper:#FAF8F4;
+    --paper-warm:#EDF3F1;
     --teal:#2F5D5A;
     --teal-dim:#4A736F;
     --brass:#A87C34;
-    --line:#C7CCC3;
-    --line-dark:#3B4A63;
+    --line:#D4CFC7;
+    --line-dark:#1C2B4A;
     --serif: 'Fraunces', serif;
     --sans: 'Inter', sans-serif;
     --mono: 'IBM Plex Mono', monospace;
@@ -105,8 +105,14 @@
   }
   .monograph{
     border:1px solid var(--ink);
+    border-left:5px solid transparent;
     background:var(--paper-warm);
     position:relative;
+    animation:borderDraw 0.6s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+  }
+  @keyframes borderDraw{
+    from{border-left-color:transparent;}
+    to{border-left-color:var(--teal);}
   }
   .monograph::before{
     content:"";
@@ -121,7 +127,7 @@
     font-size:12px;
     letter-spacing:0.1em;
     text-transform:uppercase;
-    color:var(--teal);
+    color:var(--brass);
     margin-bottom:18px;
   }
   h1{
@@ -136,7 +142,7 @@
     font-size:18px;
     max-width:52ch;
     margin-top:24px;
-    color:#33405B;
+    color:#3D4F6B;
   }
   .fields{
     margin-top:40px;
@@ -172,7 +178,7 @@
     font-size:11px;
     letter-spacing:0.1em;
     text-transform:uppercase;
-    color:var(--teal);
+    color:var(--brass);
     white-space:nowrap;
   }
   .section-head h2{
@@ -182,20 +188,28 @@
   }
   .section-note{
     font-size:15px;
-    color:#33405B;
+    color:#3D4F6B;
     max-width:62ch;
     margin-bottom:40px;
   }
 
   /* ---------- SERVICES / FORMULARY LEDGER ---------- */
-  .ledger{border-top:1px solid var(--ink);}
+  .ledger{border-top:1px solid var(--ink); border-left:3px solid var(--teal); padding-left:20px;}
   .entry{
     border-bottom:1px solid var(--line);
-    padding:26px 0;
+    padding:26px 0 26px 16px;
     display:grid;
     grid-template-columns:220px 1fr;
     gap:28px;
+    border-left:3px solid transparent;
+    transition:border-left-color 0.25s ease, padding-left 0.25s ease;
+    cursor:default;
   }
+  .entry:hover{
+    border-left-color:var(--teal);
+    padding-left:20px;
+  }
+  .entry:hover .name{color:var(--teal); transition:color 0.25s ease;}
   .entry .name{
     font-family:var(--serif);
     font-size:20px;
@@ -211,7 +225,7 @@
     display:block;
     margin-top:6px;
   }
-  .entry .desc{font-size:15px; color:#2B3550;}
+  .entry .desc{font-size:15px; color:#3D4F6B;}
   .entry .desc strong{font-weight:600; color:var(--ink);}
 
   /* ---------- PRINCIPAL ---------- */
@@ -268,7 +282,7 @@
     border:1px solid var(--ink);
     transition:background 0.2s, color 0.2s;
   }
-  .btn:hover{background:var(--teal); border-color:var(--teal);}
+  .btn:hover{background:var(--teal); border-color:var(--teal); color:#fff;}
   .btn:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
   .cta-note{
     font-family:var(--mono);
@@ -304,13 +318,13 @@
     color:var(--ink);
     letter-spacing:0.01em;
     padding-bottom:10px;
-    border-bottom:2px solid var(--teal);
+    border-bottom:2px solid var(--brass);
     display:inline-block;
     margin-bottom:14px;
   }
   .outcome .label{
     font-size:14.5px;
-    color:#2B3550;
+    color:#3D4F6B;
     line-height:1.5;
   }
   .outcomes-caption{
@@ -324,7 +338,7 @@
     color:var(--teal-dim);
   }
 
-  .principal-copy p{font-size:15.5px; margin-bottom:18px; color:#2B3550;}
+  .principal-copy p{font-size:15.5px; margin-bottom:18px; color:#3D4F6B;}
   .principal-copy p:last-child{margin-bottom:0;}
 
   .board-list{margin-top:28px;}
@@ -349,23 +363,25 @@
 
   /* ---------- APPROACH ---------- */
   .approach-band{
-    background:var(--ink);
-    color:var(--paper);
+    background:#EDF3F1;
+    color:var(--ink);
     padding:88px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
   }
-  .approach-band .section-head{border-bottom-color:rgba(237,239,234,0.2);}
-  .approach-band .section-head .tag{color:#8FD6C9;}
-  .approach-band .section-head h2{color:var(--paper);}
-  .approach-band .section-note{color:#C4CCE0;}
+  .approach-band .section-head{border-bottom-color:#C5DAD6;}
+  .approach-band .section-head .tag{color:#A87C34;}
+  .approach-band .section-head h2{color:var(--ink);}
+  .approach-band .section-note{color:#5A6070;}
   .principle-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:1px;
-    background:rgba(237,239,234,0.18);
-    border:1px solid rgba(237,239,234,0.18);
+    background:#C5DAD6;
+    border:1px solid #C5DAD6;
   }
   .principle{
-    background:var(--ink);
+    background:#EDF3F1;
     padding:30px 26px;
   }
   .principle .num{
@@ -373,14 +389,14 @@
     font-size:10.5px;
     letter-spacing:0.08em;
     text-transform:uppercase;
-    color:#8FD6C9;
+    color:#A87C34;
     margin-bottom:14px;
     display:block;
     padding-bottom:10px;
     border-bottom:1px solid rgba(143,214,201,0.3);
   }
-  .principle p{font-size:15px; color:#DCE1EE; line-height:1.55;}
-  .principle p strong{color:var(--paper); font-weight:600;}
+  .principle p{font-size:15px; color:#3D4F6B; line-height:1.55;}
+  .principle p strong{color:var(--ink); font-weight:600;}
 
   /* ---------- CONTACT ---------- */
   .contact{padding:88px 0 60px;}
@@ -389,7 +405,9 @@
     grid-template-columns:1fr 1fr;
     gap:48px;
     border-top:1px solid var(--ink);
+    border-left:5px solid var(--teal);
     padding-top:40px;
+    padding-left:24px;
     margin-bottom:48px;
     align-items:start;
   }
@@ -400,7 +418,7 @@
     max-width:14ch;
     line-height:1.15;
   }
-  .contact-copy{margin-top:18px; font-size:15.5px; color:#2B3550; max-width:48ch;}
+  .contact-copy{margin-top:18px; font-size:15.5px; color:#3D4F6B; max-width:48ch;}
   .contact-fields-inline{
     margin-top:28px;
     display:flex;
@@ -585,15 +603,15 @@
   <div class="outcomes reveal">
     <div class="outcomes-inner">
       <div class="outcome">
-        <div class="figure">100% inspection pass rate</div>
+        <div class="figure" data-count="100" data-suffix="% inspection pass rate">100% inspection pass rate</div>
         <div class="label">Every OCP and Accreditation Canada inspection led across two hospital sites passed with no action plan required.</div>
       </div>
       <div class="outcome">
-        <div class="figure">93% fewer missed doses</div>
+        <div class="figure" data-count="93" data-suffix="% fewer missed doses">93% fewer missed doses</div>
         <div class="label">After transferring patients' own medication procurement from nursing to pharmacy, returning nursing time to the bedside.</div>
       </div>
       <div class="outcome">
-        <div class="figure">71.7 → 27.9 DOT</div>
+        <div class="figure" data-from="71.7" data-to="27.9" data-suffix=" DOT">71.7 → 27.9 DOT</div>
         <div class="label">Vancomycin use per 1,000 patient days after rebuilding the antimicrobial stewardship program with monthly trending and twice-weekly physician rounding.</div>
       </div>
       <div class="outcome">
@@ -806,7 +824,7 @@
       <!-- CALENDLY EMBED -->
       <div class="calendly-wrap reveal">
         <div class="calendly-inline-widget"
-             data-url="https://calendly.com/rma-westrobinson/30min?hide_gdpr_banner=1&hide_event_type_details=1&primary_color=2F5D5A"
+             data-url="https://calendly.com/rma-westrobinson/30min?hide_gdpr_banner=1&hide_event_type_details=1&primary_color=A87C34"
              style="min-width:320px;height:660px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       </div>
@@ -834,20 +852,75 @@
 
 <script>
   var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(!prefersReduced && 'IntersectionObserver' in window){
-    var targets = document.querySelectorAll('.reveal, .reveal-stagger');
-    var io = new IntersectionObserver(function(entries){
+
+  if(prefersReduced){
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
+      el.classList.add('is-visible');
+    });
+    document.querySelectorAll('.monograph').forEach(function(el){
+      el.style.borderLeftColor = 'var(--teal)';
+      el.style.animation = 'none';
+    });
+  } else if('IntersectionObserver' in window){
+
+    /* ── scroll reveals ── */
+    var revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
+    var revealIO = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
           entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
+          revealIO.unobserve(entry.target);
         }
       });
     }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
-    targets.forEach(function(el){ io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
-      el.classList.add('is-visible');
+    revealTargets.forEach(function(el){ revealIO.observe(el); });
+
+    /* ── counter animation ── */
+    function animateCount(el, from, to, suffix, duration){
+      var start = null;
+      var isDecimal = (to % 1 !== 0) || (from % 1 !== 0);
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        var current = from + (to - from) * ease;
+        el.textContent = (isDecimal ? current.toFixed(1) : Math.round(current)) + suffix;
+        if(progress < 1) requestAnimationFrame(step);
+        else el.textContent = (isDecimal ? to.toFixed(1) : to) + suffix;
+      }
+      requestAnimationFrame(step);
+    }
+
+    var counterIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target;
+        counterIO.unobserve(el);
+
+        if(el.dataset.count){
+          animateCount(el, 0, parseFloat(el.dataset.count), el.dataset.suffix || '', 1400);
+        } else if(el.dataset.from && el.dataset.to){
+          var from = parseFloat(el.dataset.from);
+          var to = parseFloat(el.dataset.to);
+          var suffix = el.dataset.suffix || '';
+          var duration = 1400;
+          var start = null;
+          function stepRange(ts){
+            if(!start) start = ts;
+            var progress = Math.min((ts - start) / duration, 1);
+            var ease = 1 - Math.pow(1 - progress, 3);
+            var cur = from + (to - from) * ease;
+            el.textContent = from.toFixed(1) + ' \u2192 ' + cur.toFixed(1) + suffix;
+            if(progress < 1) requestAnimationFrame(stepRange);
+            else el.textContent = from.toFixed(1) + ' \u2192 ' + to.toFixed(1) + suffix;
+          }
+          requestAnimationFrame(stepRange);
+        }
+      });
+    }, {threshold:0.5});
+
+    document.querySelectorAll('.figure[data-count], .figure[data-from]').forEach(function(el){
+      counterIO.observe(el);
     });
   }
 </script>
